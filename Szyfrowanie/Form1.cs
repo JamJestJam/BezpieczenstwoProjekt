@@ -226,6 +226,7 @@ namespace Szyfrowanie
             button.Location = new Point(15, 150);
             button.TabIndex = 0;
             button.UseVisualStyleBackColor = true;
+            button.Click += DecryptCaesar;
             caesar.Add(button);
             //button
             button = new Button();
@@ -293,7 +294,7 @@ namespace Szyfrowanie
             Controls.Find("Caesar", false)[0].Text = resoult;
         }
         //decrypt
-        void EncryptCaesar(object o, EventArgs e)
+        void DecryptCaesar(object o, EventArgs e)
         {
             List<char> alphabet = new List<char> { 'A', 'Ą', 'B', 'C', 'Ć', 'D', 'E', 'Ę', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'Ł', 'M', 'N', 'Ń', 'O', 'Ó', 'P', 'Q', 'R', 'S', 'Ś', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'Ź', 'Ż' };
             int n = int.Parse(Controls.Find("Przesuniecie", false)[0].Text);
@@ -305,7 +306,10 @@ namespace Szyfrowanie
                 int tmp = alphabet.IndexOf(chart);
                 if (tmp != -1)
                 {
-                    resoult += alphabet[(tmp + n) % 35];
+                    if(tmp - n <0)
+                        resoult += alphabet[35+(tmp-n)];
+                    else
+                        resoult += alphabet[tmp - n];
                 }
             }
 
