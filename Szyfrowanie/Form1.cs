@@ -743,8 +743,8 @@ namespace Szyfrowanie
 
                 if (col1 == col2)
                 {
-                    ind1 = (row1 - 1 <= 0) ? (col1 * 5) + 4 : ind1 - 1;
-                    ind2 = (row2 - 1 <= 0) ? (col2 * 5) + 4 : ind2 - 1;
+                    ind1 = (row1 - 1 < 0) ? (col1 * 5) + 4 : ind1 - 1;
+                    ind2 = (row2 - 1 < 0) ? (col2 * 5) + 4 : ind2 - 1;
                 }
                 else if (row1 == row2)
                 {
