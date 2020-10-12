@@ -565,8 +565,8 @@ namespace Szyfrowanie
             string old = Controls.Find("Text", false)[0].Text.ToUpper();
             string resoult = "";
 
-            n = n.Replace('J', 'L');
-            old = old.Replace('J', 'L');
+            n = n.Replace('J', 'I');
+            old = old.Replace('J', 'I');
             char[] tmp = n.ToCharArray();
             Array.Reverse(tmp);
             n = new string(tmp);
@@ -619,13 +619,13 @@ namespace Szyfrowanie
 
                 if (col1 == col2)
                 {
-                    ind1 = (row1 + 1 > 5) ? col1 : ind1 + 1;
-                    ind2 = (row2 + 1 > 5) ? col2 : ind2 + 1;
+                    ind1 = (row1 + 1 >= 5) ? col1 * 5 : ind1 + 1;
+                    ind2 = (row2 + 1 >= 5) ? col2 * 5 : ind2 + 1;
                 }
                 else if (row1 == row2)
                 {
-                    ind1 = (ind1 + 5 > 25) ? row1 : ind1 + 5;
-                    ind2 = (ind2 + 5 > 25) ? row2 : ind2 + 5;
+                    ind1 = (ind1 + 5 >= 25) ? row1 : ind1 + 5;
+                    ind2 = (ind2 + 5 >= 25) ? row2 : ind2 + 5;
                 }
                 else
                 {
@@ -692,8 +692,8 @@ namespace Szyfrowanie
             string old = Controls.Find("Text", false)[0].Text.ToUpper();
             string resoult = "";
 
-            n = n.Replace('J', 'L');
-            old = old.Replace('J', 'L');
+            n = n.Replace('J', 'I');
+            old = old.Replace('J', 'I');
             char[] tmp = n.ToCharArray();
             Array.Reverse(tmp);
             n = new string(tmp);
@@ -743,13 +743,13 @@ namespace Szyfrowanie
 
                 if (col1 == col2)
                 {
-                    ind1 = (row1 - 1 < 0) ? col1 + 4 : ind1 - 1;
-                    ind2 = (row2 - 1 < 0) ? col2 + 4 : ind2 - 1;
+                    ind1 = (row1 - 1 <= 0) ? (col1 * 5) + 4 : ind1 - 1;
+                    ind2 = (row2 - 1 <= 0) ? (col2 * 5) + 4 : ind2 - 1;
                 }
                 else if (row1 == row2)
                 {
-                    ind1 = (ind1 - 5 < 0) ? row1+20 : ind1 - 5;
-                    ind2 = (ind2 - 5 < 0) ? row2+20 : ind2 - 5;
+                    ind1 = (ind1 - 5 <= 0) ? row1 + 20 : ind1 - 5;
+                    ind2 = (ind2 - 5 <= 0) ? row2 + 20 : ind2 - 5;
                 }
                 else
                 {
