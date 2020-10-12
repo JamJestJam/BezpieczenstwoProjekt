@@ -748,8 +748,8 @@ namespace Szyfrowanie
                 }
                 else if (row1 == row2)
                 {
-                    ind1 = (ind1 - 5 <= 0) ? row1 + 20 : ind1 - 5;
-                    ind2 = (ind2 - 5 <= 0) ? row2 + 20 : ind2 - 5;
+                    ind1 = (ind1 - 5 < 0) ? row1 + 20 : ind1 - 5;
+                    ind2 = (ind2 - 5 < 0) ? row2 + 20 : ind2 - 5;
                 }
                 else
                 {
