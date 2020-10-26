@@ -565,13 +565,11 @@ namespace Szyfrowanie
             string old = Controls.Find("Text", false)[0].Text.ToUpper();
             string resoult = "";
 
-            n = n.Replace('J', 'I');
-            old = old.Replace('J', 'I');
             char[] tmp = n.ToCharArray();
             Array.Reverse(tmp);
             n = new string(tmp);
 
-            List<char> alphabet = new List<char> { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+            List<char> alphabet = new List<char>{ 'A', 'Ą', 'B', 'C', 'Ć', 'D', 'E', 'Ę', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'Ł', 'M', 'N', 'Ń', 'O', 'Ó', 'P', 'Q', 'R', 'S', 'Ś', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'Ź', 'Ż' };
 
             for (int i = 0; i < n.Length; i++)
             {
@@ -624,8 +622,8 @@ namespace Szyfrowanie
                 }
                 else if (row1 == row2)
                 {
-                    ind1 = (ind1 + 5 >= 25) ? row1 : ind1 + 5;
-                    ind2 = (ind2 + 5 >= 25) ? row2 : ind2 + 5;
+                    ind1 = (ind1 + 5 >= 35) ? row1 : ind1 + 5;
+                    ind2 = (ind2 + 5 >= 35) ? row2 : ind2 + 5;
                 }
                 else
                 {
@@ -692,13 +690,11 @@ namespace Szyfrowanie
             string old = Controls.Find("Text", false)[0].Text.ToUpper();
             string resoult = "";
 
-            n = n.Replace('J', 'I');
-            old = old.Replace('J', 'I');
             char[] tmp = n.ToCharArray();
             Array.Reverse(tmp);
             n = new string(tmp);
 
-            List<char> alphabet = new List<char> { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+            List<char> alphabet = new List<char> { 'A', 'Ą', 'B', 'C', 'Ć', 'D', 'E', 'Ę', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'Ł', 'M', 'N', 'Ń', 'O', 'Ó', 'P', 'Q', 'R', 'S', 'Ś', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'Ź', 'Ż' };
 
             for (int i = 0; i < n.Length; i++)
             {
@@ -748,8 +744,8 @@ namespace Szyfrowanie
                 }
                 else if (row1 == row2)
                 {
-                    ind1 = (ind1 - 5 < 0) ? row1 + 20 : ind1 - 5;
-                    ind2 = (ind2 - 5 < 0) ? row2 + 20 : ind2 - 5;
+                    ind1 = (ind1 - 5 < 0) ? row1 + 30 : ind1 - 5;
+                    ind2 = (ind2 - 5 < 0) ? row2 + 30 : ind2 - 5;
                 }
                 else
                 {
